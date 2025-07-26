@@ -75,3 +75,42 @@ This project performs data analysis on Dmart sales data using Apache PySpark. Th
                    unique_products_region = all_data_df.groupBy("Region").agg(countDistinct("Product_id").alias("Unique_Products"))
                   
                    unique_products_region.show()
+                   
+*5.Total Profit generated in each state:*
+
+                   final_df.groupBy("State").agg(sum("Profit").alias("Total_Profit")).show()
+
+*6.Product sub-category with highest sales:
+                  
+                   highest_sales_subcategory = all_data_df.groupBy("Sub-Category").sum("Sales").orderBy(col("sum(Sales)").desc())
+                   
+*7.Average age of customers in each segment:*
+
+                   avg_age_segment = all_data_df.groupBy("Segment").avg("Age")
+                   
+                   avg_age_segment.show()
+
+*8.Orders shipped in each shipping mode:*
+                  
+                  orders_shipping_mode = all_data_df.groupBy("Ship_Mode").count()
+                  
+                  orders_shipping_mode.show()
+                  
+*9.Total quantity of products sold in each city:*
+                   total_qty_city = all_data_df.groupBy("City").sum("Quantity")
+                   
+                   total_qty_city.show()
+                   
+*10. Customer segment with the highest profit margin:*
+                   profit_segment = all_data_df.groupBy("Segment").sum("Profit").orderBy(col("sum(Profit)").desc())
+                   
+                   profit_segment.show(1)
+    
+     *Stop Spark session:*
+         
+         spark.stop()
+
+
+##*📈 Conclusion:*
+This PySpark-driven Dmart analysis successfully integrates multiple datasets, cleans and transforms them, and provides valuable insights through business-centric queries. 
+The solution is scalable, fast, and adaptable for enterprise-level analytics.       
