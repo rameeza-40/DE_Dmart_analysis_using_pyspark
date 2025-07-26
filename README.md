@@ -113,5 +113,5 @@ Stop Spark session:
      spark.stop()
 
 
-## * Conclusion:*
+## *Conclusion:*
    This PySpark-driven Dmart analysis successfully integrates multiple datasets, cleans and transforms them, and provides valuable insights through business-centric queries.The solution is scalable, fast, and adaptable for enterprise-level analytics.       
