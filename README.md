@@ -105,12 +105,14 @@ This project performs data analysis on Dmart sales data using Apache PySpark. Th
                    profit_segment = all_data_df.groupBy("Segment").sum("Profit").orderBy(col("sum(Profit)").desc())
                    
                    profit_segment.show(1)
-    
-     *Stop Spark session:*
-         
-         spark.stop()
+
+
+
+Stop Spark session:
+     
+     spark.stop()
 
 
 ## * Conclusion:*
-   This PySpark-driven Dmart analysis successfully integrates multiple datasets, cleans and transforms them, and provides valuable insights through business-centric queries. 
-The solution is scalable, fast, and adaptable for enterprise-level analytics.       
+   =>This PySpark-driven Dmart analysis successfully integrates multiple datasets, cleans and transforms them, and provides valuable insights through business-centric queries. 
+   =>The solution is scalable, fast, and adaptable for enterprise-level analytics.       
